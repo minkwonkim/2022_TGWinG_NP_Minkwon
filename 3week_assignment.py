@@ -42,5 +42,16 @@ alram(1610)
     
 
 # 문제 4번
+from sympy import *
+init_printing()             # 수식을 보기좋게 출력하는 함수를 호출한다
+
+x, y, z, t = symbols('x y z t')
+def roundfunction(x1,y1,r1):
+    sol=solve( Eq( (x-x1)**2 + (y-y1)**2, r1**2 ),x)
+    return sol
 def findDaesun(x1,y1,r1,x2,y2,r2):
-    return
+    if(len(roundfunction(x1,y1,r1) and roundfunction(x2,y2,r2))<3):
+        return print(len(roundfunction(x1,y1,r1) and roundfunction(x2,y2,r2)))
+    else:
+        return print("어딘지 모르겠다 오바")      
+findDaesun(0,0,1,0,0,1)
